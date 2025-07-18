@@ -1003,7 +1003,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* CORREÇÕES MOBILE */
+        /* CORREÇÕES MOBILE ESPECÍFICAS */
         @media (max-width: 768px) {
             /* Hero Section */
             .hero-title {
@@ -1026,7 +1026,7 @@
                 margin-bottom: 2rem;
             }
             
-            /* About Section - Correção do grid */
+            /* CORREÇÃO CRITICAL About Me - Forçar visibilidade */
             .about-content {
                 grid-template-columns: 1fr !important;
                 gap: 2rem;
@@ -1035,6 +1035,23 @@
             
             .about-image {
                 order: -1;
+                opacity: 1 !important;
+                transform: none !important;
+                visibility: visible !important;
+            }
+            
+            .about-text {
+                opacity: 1 !important;
+                transform: none !important;
+                visibility: visible !important;
+                text-align: left;
+            }
+            
+            .slide-in-left,
+            .slide-in-right {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
             }
             
             .profile-card {
@@ -1042,16 +1059,23 @@
                 padding: 1.5rem;
                 margin: 0 auto;
                 max-width: 300px;
+                opacity: 1 !important;
+                visibility: visible !important;
             }
             
             .profile-img {
                 width: 150px;
                 height: 150px;
                 margin: 0 auto 1rem;
+                background-size: cover !important;
+                background-position: center !important;
+                opacity: 1 !important;
+                visibility: visible !important;
             }
             
-            .about-text {
-                text-align: left;
+            .about-content > * {
+                opacity: 1 !important;
+                visibility: visible !important;
             }
             
             .passion-list {
@@ -1080,6 +1104,7 @@
                 padding-left: 60px;
                 margin: 40px 0;
                 transform: translateX(0) !important;
+                opacity: 1 !important;
             }
             
             .timeline-item::before {
@@ -1118,7 +1143,23 @@
                 font-size: 1.3rem;
             }
             
-            /* Correção das imagens dos países */
+            /* CORREÇÃO CRITICAL México - Evitar cortes */
+            .mexico-grid {
+                display: block !important;
+                grid-template-columns: none !important;
+            }
+            
+            .mexico-grid .country-image {
+                width: 100% !important;
+                height: 200px !important;
+                margin-bottom: 3px;
+                background-size: cover !important;
+                background-position: center !important;
+                display: block !important;
+                border-radius: 5px;
+            }
+            
+            /* Correção das outras imagens dos países */
             .country-image {
                 height: 120px;
             }
@@ -1130,7 +1171,7 @@
             
             .portugal-grid .country-image:nth-child(3) {
                 grid-column: 1 / -1;
-                height: 150px;
+                height: 180px !important;
             }
             
             .korea-grid {
@@ -1138,13 +1179,8 @@
                 gap: 2px;
             }
             
-            .mexico-grid {
-                grid-template-columns: 1fr;
-                gap: 2px;
-            }
-            
-            .mexico-grid .country-image {
-                height: 150px;
+            .korea-grid .country-image {
+                height: 150px !important;
             }
             
             /* Contact Section */
@@ -1167,6 +1203,26 @@
             .travel,
             .contact {
                 padding: 60px 0;
+            }
+            
+            /* Desabilitar animações problemáticas no mobile */
+            .animate-on-scroll,
+            .scale-in,
+            .rotate-in {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+            }
+            
+            /* Manter apenas animações essenciais */
+            .fab:hover {
+                transform: scale(1.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .country-image:hover {
+                transform: scale(1.02);
+                transition: transform 0.3s ease;
             }
         }
 
@@ -1210,11 +1266,15 @@
             }
             
             .portugal-grid .country-image:nth-child(3) {
-                height: 120px;
+                height: 150px !important;
+            }
+            
+            .korea-grid .country-image {
+                height: 120px !important;
             }
             
             .mexico-grid .country-image {
-                height: 120px;
+                height: 180px !important;
             }
             
             /* Contact */
@@ -1223,7 +1283,26 @@
             }
         }
 
-        /* Garantir que as imagens carreguem corretamente */
+        /* Correções específicas para imagens de background */
+        .mexico-1 { 
+            background-image: url('https://raw.githubusercontent.com/emoji1803/salvador/refs/heads/main/mexico1.png') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        .mexico-2 { 
+            background-image: url('https://raw.githubusercontent.com/emoji1803/salvador/refs/heads/main/mexico2.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        .mexico-3 { 
+            background-image: url('https://raw.githubusercontent.com/emoji1803/salvador/refs/heads/main/mexico3.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        /* Garantir que todas as imagens carreguem corretamente */
         .korea-1, .korea-2, .korea-3, .korea-4,
         .mexico-1, .mexico-2, .mexico-3,
         .portugal-1, .portugal-2, .portugal-3 {

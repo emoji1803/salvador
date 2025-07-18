@@ -1003,7 +1003,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* CORREÇÕES MOBILE ESPECÍFICAS */
+        /* MOBILE FIXES - CORRECTED VERSION */
         @media (max-width: 768px) {
             /* Hero Section */
             .hero-title {
@@ -1026,7 +1026,7 @@
                 margin-bottom: 2rem;
             }
             
-            /* CORREÇÃO CRITICAL About Me - Forçar visibilidade */
+            /* CRITICAL FIX: About Me Section - Force visibility */
             .about-content {
                 grid-template-columns: 1fr !important;
                 gap: 2rem;
@@ -1038,19 +1038,21 @@
                 opacity: 1 !important;
                 transform: none !important;
                 visibility: visible !important;
+                animation: none !important;
             }
             
             .about-text {
                 opacity: 1 !important;
                 transform: none !important;
                 visibility: visible !important;
+                animation: none !important;
                 text-align: left;
             }
             
             .slide-in-left,
             .slide-in-right {
                 opacity: 1 !important;
-                transform: none !important;
+                transform: translateX(0) !important;
                 animation: none !important;
             }
             
@@ -1067,13 +1069,22 @@
                 width: 150px;
                 height: 150px;
                 margin: 0 auto 1rem;
+                background-image: url('https://raw.githubusercontent.com/emoji1803/salvador/refs/heads/main/perfil.jpg') !important;
                 background-size: cover !important;
                 background-position: center !important;
                 opacity: 1 !important;
                 visibility: visible !important;
+                display: block !important;
             }
             
-            .about-content > * {
+            .about-text h3,
+            .about-text p {
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            /* Force all about content to be visible */
+            .about-content * {
                 opacity: 1 !important;
                 visibility: visible !important;
             }
@@ -1088,7 +1099,13 @@
                 gap: 1.5rem;
             }
             
-            /* Timeline Experience - Correção */
+            .skill-card {
+                opacity: 1 !important;
+                transform: none !important;
+                visibility: visible !important;
+            }
+            
+            /* Timeline Experience - Fix */
             .timeline {
                 padding: 0 20px;
             }
@@ -1133,6 +1150,9 @@
             
             .country-section {
                 margin-bottom: 2rem;
+                opacity: 1 !important;
+                transform: none !important;
+                visibility: visible !important;
             }
             
             .country-header {
@@ -1143,7 +1163,7 @@
                 font-size: 1.3rem;
             }
             
-            /* CORREÇÃO CRITICAL México - Evitar cortes */
+            /* Fix Mexico images cutting off */
             .mexico-grid {
                 display: block !important;
                 grid-template-columns: none !important;
@@ -1159,7 +1179,7 @@
                 border-radius: 5px;
             }
             
-            /* Correção das outras imagens dos países */
+            /* Other country images */
             .country-image {
                 height: 120px;
             }
@@ -1191,6 +1211,9 @@
             
             .contact-item {
                 padding: 1.5rem;
+                opacity: 1 !important;
+                transform: none !important;
+                visibility: visible !important;
             }
             
             /* General */
@@ -1205,16 +1228,17 @@
                 padding: 60px 0;
             }
             
-            /* Desabilitar animações problemáticas no mobile */
+            /* Disable ALL problematic animations on mobile */
             .animate-on-scroll,
             .scale-in,
             .rotate-in {
                 opacity: 1 !important;
                 transform: none !important;
                 animation: none !important;
+                visibility: visible !important;
             }
             
-            /* Manter apenas animações essenciais */
+            /* Keep only essential animations */
             .fab:hover {
                 transform: scale(1.1);
                 transition: transform 0.3s ease;
@@ -1281,33 +1305,17 @@
             .contact-item {
                 padding: 1rem;
             }
-        }
-
-        /* Correções específicas para imagens de background */
-        .mexico-1 { 
-            background-image: url('https://raw.githubusercontent.com/emoji1803/salvador/refs/heads/main/mexico1.png') !important;
-            background-size: cover !important;
-            background-position: center !important;
-        }
-
-        .mexico-2 { 
-            background-image: url('https://raw.githubusercontent.com/emoji1803/salvador/refs/heads/main/mexico2.jpg') !important;
-            background-size: cover !important;
-            background-position: center !important;
-        }
-
-        .mexico-3 { 
-            background-image: url('https://raw.githubusercontent.com/emoji1803/salvador/refs/heads/main/mexico3.jpg') !important;
-            background-size: cover !important;
-            background-position: center !important;
-        }
-
-        /* Garantir que todas as imagens carreguem corretamente */
-        .korea-1, .korea-2, .korea-3, .korea-4,
-        .mexico-1, .mexico-2, .mexico-3,
-        .portugal-1, .portugal-2, .portugal-3 {
-            background-size: cover !important;
-            background-position: center !important;
+            
+            /* Force visibility on smallest screens too */
+            .about-content *,
+            .skill-card,
+            .timeline-item,
+            .country-section,
+            .contact-item {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
         }
 
         /* Reduce animations for users who prefer reduced motion */
